@@ -1,0 +1,5 @@
+<launch>
+	<arg name="robot_description_path" default="$(dirname)/../robot_description" />
+	<param name="robot_description" command="$(find xacro)/xacro '$(arg robot_description_path)/urdf/quadruped_robot/quadruped_robot.xacro'" />
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(dirname)/quadruped.rviz" required="true" />
+</launch>
